@@ -30,15 +30,11 @@ int main() {
 
 ```cpp
 ll qpow(ll a, ll b, ll p) {
-    if (p == 1) return 0;
     ll res = 1;
     while (b) {
         if (b & 1) res = res * a % p;
-        a = a * a % p;
-        b >>= 1;
+        a = a * a % p , b >>= 1;
     }
-    return res;
-}
     return res;
 }
 ```
@@ -54,9 +50,8 @@ ll qpow(ll a, ll b, ll p) {
 > **常用质数模数**：`1e9+7`, `998244353`
 
 ```cpp
-ll inv(ll a, ll p) {
-    return qpow(a, p - 2, p);  // p 必须是质数
-}
+ll inv(ll a, ll p) {return qpow(a, p - 2, p); } // p 必须是质数
+
 ```
 
 ---
@@ -139,6 +134,8 @@ void get_primes(int n) {
 
 ## 6. 树状数组 (Fenwick Tree / BIT)
 
+* fwt 好名字
+
 > 支持 **单点加 + 前缀和查询**，O(log n)。注意树状数组下标从 1 开始。
 
 ```cpp
@@ -199,7 +196,8 @@ struct SegTree {
     }
 
     void build(int u, int l, int r) {
-        tag[u] = 0;  // 清除上次残留的 tag
+        //build from a[]
+
         if (l == r) { sum[u] = a[l]; return; }
         int mid = (l + r) >> 1;
         build(u << 1, l, mid);
@@ -267,7 +265,7 @@ struct Trie {
     int nex[N * 26][26], idx;
     int cnt[N * 26];  // 经过该节点的字符串数量
 
-    void insert(const string &s) {
+    void insert(string &s) {
         int p = 0;
         for (char c : s) {
             int u = c - 'a';
@@ -277,7 +275,7 @@ struct Trie {
         }
     }
 
-    int query(const string &s) {  // 查询 s 作为前缀出现的次数
+    int query(string &s) {  // 查询 s 作为前缀出现的次数
         int p = 0;
         for (char c : s) {
             int u = c - 'a';
