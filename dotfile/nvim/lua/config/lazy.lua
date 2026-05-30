@@ -9,7 +9,7 @@ if not vim.uv.fs_stat(lazypath) then
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
-		lazypath
+		lazypath,
 	})
 end
 
@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		{ import = "plugins" },
 	},
 })

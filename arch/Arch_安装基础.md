@@ -455,6 +455,11 @@ systemctl enable sddm
 > 建议装完桌面后立即安装，避免重启黑屏。
 > 若黑屏，按 `Ctrl+Alt+F2~F6` 进入 TTY 终端补救。
 
+#### NVIDIA 现代选择
+```bash
+sudo pacman -S nvidia-open-dkms nvidia-utils nvidia-settings
+```
+
 #### NVIDIA 显卡（dkms 版本，推荐）
 
 ```bash
