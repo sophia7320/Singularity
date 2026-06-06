@@ -49,6 +49,9 @@ return {
                 "clangd",
             },
             automatic_enable = true,
+            handlers = {
+                rust_analyzer = function() end,
+            },
         },
     },
 
@@ -79,7 +82,7 @@ return {
             ensure_installed = {
                 "debugpy", -- Python
                 "codelldb", -- C, C++, Rust
-                "delve", -- Go
+                -- "delve", -- Go
                 -- "js-debug-adapter", -- JavaScript/TypeScript
             },
             automatic_installation = true, -- 自动安装未安装的适配器

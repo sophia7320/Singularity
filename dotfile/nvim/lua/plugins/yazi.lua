@@ -1,4 +1,3 @@
----@type LazySpec
 return {
     "mikavilpas/yazi.nvim",
     version = "*", -- use the latest stable version
@@ -26,7 +25,6 @@ return {
             desc = "Resume the last yazi session",
         },
     },
-    ---@type YaziConfig | {}
     opts = {
         -- if you want to open yazi instead of netrw, see below for more info
         open_for_directories = false,

@@ -42,11 +42,17 @@ return {
                 modes = { insert = true, command = true, terminal = true },
             })
 
-            require("mini.surround").setup({})
-
             require("mini.ai").setup({})
-
-            require("mini.comment").setup({})
         end,
+    },
+    {
+        "nvim-mini/mini.surround",
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
+        "nvim-mini/mini.comment",
+        event = "VeryLazy",
+        opts = {},
     },
 }

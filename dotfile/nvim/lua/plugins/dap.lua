@@ -4,6 +4,7 @@ return {
 	-- 1. nvim-dap 核心调试引擎
 	{
 		"mfussenegger/nvim-dap",
+		config = function() end,
 		keys = {
 			{
 				"<leader>dB",
